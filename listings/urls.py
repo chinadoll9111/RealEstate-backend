@@ -1,18 +1,20 @@
+# listings/urls.py
+
 from django.urls import path
 from .views import (
-    RegisterView,
-    ListingListView,
-    ListingDetailView,
-    SearchListingView,
-    InquiryCreateView
+    ListingListAPIView,
+    ListingDetailAPIView,
+    ListingSearchAPIView,
+    InquiryAPIView,
+    RegisterAPIView,
+    LoginAPIView
 )
-from rest_framework_simplejwt.views import TokenObtainPairView
 
 urlpatterns = [
-    path('register/', RegisterView.as_view()),
-    path('login/', TokenObtainPairView.as_view()),
-    path('listings/', ListingListView.as_view()),
-    path('listings/<int:pk>/', ListingDetailView.as_view()),
-    path('search/', SearchListingView.as_view()),
-    path('inquiry/', InquiryCreateView.as_view()),
+    path('listings/', ListingListAPIView.as_view(), name='listing-list'),
+    path('listings/<int:pk>/', ListingDetailAPIView.as_view(), name='listing-detail'),
+    path('search/', ListingSearchAPIView.as_view(), name='listing-search'),
+    path('inquiry/', InquiryAPIView.as_view(), name='listing-inquiry'),
+    path('register/', RegisterAPIView.as_view(), name='register'),
+    path('login/', LoginAPIView.as_view(), name='login'),
 ]
