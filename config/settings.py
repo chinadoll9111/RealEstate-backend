@@ -25,7 +25,11 @@ SECRET_KEY = 'django-insecure-jq&a)j&)=g$yr=0y$76ok8x7reimy6ihtfa^$uh+)$+du_gj0r
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "realestate-api-qcw5.onrender.com",
+    "localhost",
+    "127.0.0.1"
+]
 
 
 # Application definition
